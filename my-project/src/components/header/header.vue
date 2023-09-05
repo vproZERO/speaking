@@ -65,48 +65,7 @@
                     </div>
                     <div  class="headling__btn mx-auto">
                         <button v-on:click="isOpen = !isOpen" class=" bg-amber-300 py-2 px-6 rounded-lg text-xl font-bold uppercase hover:bg-amber-200 mb-4">chegirmada sotib olish</button>
-                        <div :class="isOpen ? 'block' : 'hidden'"   class=" bg-black bg-opacity-25 fixed inset-0 z-50   mx-auto ">
-                    <div class="modal__box flex justify-center items-center mb-2.5 mt-2.5">
-                                
-                                <div class="modal__box kursga__tolov__btn  mx-auto rounded-lg bg-white p-3">
-                                    <button v-on:click="isOpen = !isOpen"  class="absolute" ><span >x</span></button> 
-                                <h2 class="res__modal__title text-center font-bold text-lg uppercase mb-5">kursga <span class="text-blue-600">to`lov qilish</span></h2>
-                                <div class="modal__input rounded-lg bg-blue-600 bg-opacity-25 py-3 px-5 flex items-center justify-between mb-5">
-                                    <h2 class="res__modal__num text-base font-medium text-black">4790 9122 1022 9003</h2>
-                                    <div class="w-10 h-3">
-                                        <img src="../../imgs/visa.svg" alt="visa">
-                                    </div>
-                                </div>
-                                <div class="modal__input rounded-lg bg-blue-600 bg-opacity-25 py-3 px-5 flex items-center justify-between mb-5">
-                                    <h2 class="res__modal__num text-base font-medium text-black">8600 0201 4244 6215</h2>
-                                    <div class="w-10 h-3">
-                                        <img src="../../imgs/uzcard.svg" alt="visa">
-                                    </div>
-                                </div>
-                                <p class="res__modal_subtitle text-sm text-center font-normal opacity-25">Kurs narxi:</p>
-                                <p class="res__modal_subsom font-bold text-base text-center mb-5">149 000 so‘m</p>
-                                <button v-on:click="onOpen = !onOpen" class="modal__btn2 bg-amber-300 rounded-lg py-3 px-44">
-                                    <p class="uppercase text-center text-base font-bold">skrinshotni yuborish</p>
-                                </button>
-                                
-                                </div>
-                    </div>
-                </div>
-                <div  :class="onOpen ? 'block' : 'hidden'"   class=" bg-black bg-opacity-25 fixed inset-0 z-50 pt-2.5  mx-auto ">
-                    <div class="modal__box flex justify-center items-center ">
-                        
-                        <div class="modal__box mx-auto rounded-lg bg-white p-3">
-                                <button v-on:click="onOpen = !onOpen"  class="absolute" ><span >x</span></button>
-                                <p class="res__modal__text2 text-center text-xs font-normal mb-1">Menejerdan ma’lumot olish uchun</p>
-                                <p class="res__modal__title2 text-blue-600 text-lg font-bold text-center uppercase mb-5">raqamingizni qoldiring</p>
-                                <input type="text"  placeholder="Ismingiz" class="py-4 pl-4 modal__input border-2 rounded-xl border-gray-200 block mb-5 " required>
-                                <input type="tel" placeholder="Telefon raqamingiz" class="py-4 pl-4 modal__input border-2 rounded-xl border-gray-200 block mb-5" required>
-                                <div class="pb-5 modal__input">
-                                    <button type="button" class="modal__btn modal__btn2 bg-amber-300 rounded-xl py-3 px-60 text-base font-bold  uppercase">yuborish</button>
-                                </div>
-                            </div>
-                    </div>
-                </div>
+                        <Modal  :class="isOpen ? 'block' : 'hidden'"   class=" bg-black bg-opacity-25 fixed inset-0 z-50 mx-auto "/>
                     </div>
 
                     <p class="headline__caveat caveat3 text-md italic text-center text-white"><span class="text-amber-300">Ulgurib qoling,</span> Joylar soni cheklangan!</p>
@@ -130,7 +89,11 @@
     </div>
 </template>
 <script>
+import Modal from '../modal/modal.vue'
 export default {
+    components: {
+        Modal
+    },
     data : () => {
         return {
             isOpen : false,
@@ -145,9 +108,6 @@ export default {
         height: 700px;
         margin: 0 auto;
     }
-    .modal__box{
-        height: 312px;
-    }
     .header__box__content{
         width: 1471px;
     }
@@ -158,10 +118,6 @@ export default {
     .header__yellow_img{
         width: 660px;
         height: 720px;
-    }
-    .modal__input{
-        width: 560px;
-        height: 44px;
     }
     .header__redphone_img{
         height: 591px;
@@ -344,22 +300,6 @@ export default {
             font-size: 24px;
             line-height: 32px;
             margin-left: -180px;
-        }
-
-        .res__modal__text2{
-            width: 196px;
-            margin: 0 auto;
-        }
-        .res__modal__title2{
-            width: 239px;
-            margin: 0 auto;
-            font-size: 14px;
-            line-height: 18px;
-            margin-block: 5px;
-        }
-        .modal__btn3{
-            font-size: 16px;
-            line-height: 16px;
         }
     }
     
